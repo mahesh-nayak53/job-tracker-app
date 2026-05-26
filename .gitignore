@@ -1,0 +1,20 @@
+# Node modules
+node_modules/
+
+# React build
+dist/
+
+# Environment files
+.env
+
+# Java
+target/
+*.class
+
+# Eclipse files
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
