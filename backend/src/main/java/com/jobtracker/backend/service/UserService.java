@@ -25,18 +25,16 @@ public class UserService {
     }
 
     // UPDATE PROFILE
-    public User updateProfile(User updated) {
+    public User updateProfile(User updatedUser) {
 
-        String username = authService.getCurrentUsername();
+        User existingUser = getMyProfile();
 
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+        existingUser.setUsername(updatedUser.getUsername());
+        existingUser.setEmail(updatedUser.getEmail());
+        existingUser.setPhone(updatedUser.getPhone());
+        existingUser.setProfileImageUrl(updatedUser.getProfileImageUrl());
+        existingUser.setResumeUrl(updatedUser.getResumeUrl());
 
-        user.setFullName(updated.getFullName());
-        user.setEmail(updated.getEmail());
-        user.setPhone(updated.getPhone());
-        user.setProfileImageUrl(updated.getProfileImageUrl());
-
-        return userRepository.save(user);
+        return userRepository.save(existingUser);
     }
 }

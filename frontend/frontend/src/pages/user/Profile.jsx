@@ -6,7 +6,7 @@ export default function Profile() {
     username: "",
     email: "",
     phone: "",
-    profileImage: "",
+    profileImageUrl: "",
     resumeUrl: "",
   });
 
@@ -21,7 +21,14 @@ export default function Profile() {
   const fetchProfile = async () => {
     try {
       const res = await API.get("/profile");
-      setUser(res.data);
+
+      setUser({
+        username: res.data.username || "",
+        email: res.data.email || "",
+        phone: res.data.phone || "",
+        profileImage: res.data.profileImageUrl || "",
+        resumeUrl: res.data.resumeUrl || "",
+      });
     } catch (err) {
       console.error(err);
     }
@@ -59,7 +66,7 @@ export default function Profile() {
       // IMAGE
       if (imageFile) {
         const imageUrl = await uploadFile(imageFile);
-        updatedData.profileImage = imageUrl;
+        updatedData.profileImageUrl = imageUrl;
       }
 
       // RESUME
@@ -87,10 +94,8 @@ export default function Profile() {
 
   return (
     <div className="min-h-screen bg-slate-100 p-4 sm:p-6 lg:p-8">
-
       {/* HEADER */}
       <div className="mb-8">
-
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-800">
           My Profile
         </h1>
@@ -102,18 +107,15 @@ export default function Profile() {
 
       {/* PROFILE CARD */}
       <div className="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
-
         {/* TOP SECTION */}
         <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-32"></div>
 
         <div className="px-5 sm:px-8 pb-8">
-
           {/* PROFILE IMAGE */}
           <div className="-mt-16 flex flex-col sm:flex-row sm:items-end gap-5">
-
-            {user.profileImage ? (
+            {user.profileImageUrl ? (
               <img
-                src={user.profileImage}
+                src={user.profileImageUrl}
                 alt="profile"
                 className="w-32 h-32 rounded-full border-[5px] border-white object-cover shadow-lg bg-white"
               />
@@ -124,7 +126,6 @@ export default function Profile() {
             )}
 
             <div className="pb-2">
-
               <h2 className="text-2xl font-bold text-slate-800">
                 {user.username || "User"}
               </h2>
@@ -132,16 +133,13 @@ export default function Profile() {
               <p className="text-slate-500 break-all">
                 {user.email || "No Email"}
               </p>
-
             </div>
           </div>
 
           {/* FORM */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
-
             {/* USERNAME */}
             <div>
-
               <label className="block text-slate-700 font-semibold mb-2">
                 Username
               </label>
@@ -157,7 +155,6 @@ export default function Profile() {
 
             {/* EMAIL */}
             <div>
-
               <label className="block text-slate-700 font-semibold mb-2">
                 Email
               </label>
@@ -173,7 +170,6 @@ export default function Profile() {
 
             {/* PHONE */}
             <div>
-
               <label className="block text-slate-700 font-semibold mb-2">
                 Phone Number
               </label>
@@ -189,7 +185,6 @@ export default function Profile() {
 
             {/* PROFILE IMAGE */}
             <div>
-
               <label className="block text-slate-700 font-semibold mb-2">
                 Profile Image
               </label>
@@ -204,7 +199,6 @@ export default function Profile() {
 
             {/* RESUME */}
             <div className="md:col-span-2">
-
               <label className="block text-slate-700 font-semibold mb-2">
                 Upload Resume
               </label>
@@ -221,7 +215,6 @@ export default function Profile() {
           {/* RESUME VIEW */}
           {user.resumeUrl && (
             <div className="mt-6">
-
               <a
                 href={user.resumeUrl}
                 target="_blank"
@@ -230,13 +223,11 @@ export default function Profile() {
               >
                 View Resume
               </a>
-
             </div>
           )}
 
           {/* SAVE BUTTON */}
           <div className="mt-8">
-
             <button
               onClick={updateProfile}
               disabled={loading}
@@ -244,7 +235,6 @@ export default function Profile() {
             >
               {loading ? "Saving..." : "Save Changes"}
             </button>
-
           </div>
         </div>
       </div>

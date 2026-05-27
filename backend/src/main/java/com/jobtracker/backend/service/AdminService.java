@@ -25,7 +25,7 @@ public class AdminService {
     }
 
     // ============================
-    // ✅ GET ALL USERS (DTO)
+    //  GET ALL USERS (DTO)
     // ============================
     public List<UserDTO> getAllUsers() {
         return userRepository.findAll()
@@ -39,14 +39,14 @@ public class AdminService {
     }
 
     // ============================
-    // ✅ DELETE USER (SAFE)
+    //  DELETE USER (SAFE)
     // ============================
     public String deleteUser(Long id) {
 
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        // 🔴 IMPORTANT: delete jobs first (FK constraint fix)
+        //  IMPORTANT: delete jobs first (FK constraint fix)
         jobRepository.deleteAllByUser(user);
 
         userRepository.delete(user);
@@ -55,7 +55,7 @@ public class AdminService {
     }
 
     // ============================
-    // ✅ GET ALL JOBS
+    // GET ALL JOBS
     // ============================
     public List<JobResponseDTO> getAllJobs() {
 
@@ -73,7 +73,7 @@ public class AdminService {
     }
 
     // ============================
-    // ✅ PROMOTE USER TO ADMIN
+    // PROMOTE USER TO ADMIN
     // ============================
     public String makeAdmin(Long id) {
 
