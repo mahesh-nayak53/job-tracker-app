@@ -2,18 +2,18 @@ package com.jobtracker.backend.config;
 
 import com.jobtracker.backend.config.jwt.JwtAuthFilter;
 
-
-//import java.beans.Customizer;
 import java.util.List;
 
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.crypto.bcrypt.*;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.*;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -33,17 +33,31 @@ public class SecurityConfig {
 
         http
             .csrf(csrf -> csrf.disable())
+
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+
             .sessionManagement(session ->
                     session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
+
             .authorizeHttpRequests(auth -> auth
+
+                    // PUBLIC ROUTES
+                    .requestMatchers("/").permitAll()
                     .requestMatchers("/api/auth/**").permitAll()
+
+                    // ADMIN ROUTES
                     .requestMatchers("/api/admin/**").hasRole("ADMIN")
+
+                    // USER ROUTES
                     .requestMatchers("/api/jobs/**").hasAnyRole("USER", "ADMIN")
+
+                    // EVERYTHING ELSE
                     .anyRequest().authenticated()
             )
-            .addFilterBefore(jwtAuthFilter,
+
+            .addFilterBefore(
+                    jwtAuthFilter,
                     UsernamePasswordAuthenticationFilter.class
             );
 
@@ -60,9 +74,21 @@ public class SecurityConfig {
 
         CorsConfiguration config = new CorsConfiguration();
 
-        config.setAllowedOrigins(List.of("http://localhost:5173"));
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
+        config.setAllowedOrigins(List.of(
+                "http://localhost:5173",
+                "https://your-frontend-url.up.railway.app"
+        ));
+
+        config.setAllowedMethods(List.of(
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE",
+                "OPTIONS"
+        ));
+
         config.setAllowedHeaders(List.of("*"));
+
         config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source =
