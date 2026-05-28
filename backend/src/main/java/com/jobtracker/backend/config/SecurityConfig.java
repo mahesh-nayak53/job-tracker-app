@@ -76,7 +76,7 @@ public class SecurityConfig {
 
         config.setAllowedOrigins(List.of(
                 "http://localhost:5173",
-                "https://your-frontend-url.up.railway.app"
+                "https://job-tracker-app-olive.vercel.app"
         ));
 
         config.setAllowedMethods(List.of(
