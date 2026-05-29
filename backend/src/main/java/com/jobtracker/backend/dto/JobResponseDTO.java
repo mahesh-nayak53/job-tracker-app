@@ -11,7 +11,7 @@ public class JobResponseDTO {
     private LocalDate appliedDate;
     private String notes;
 
-    // ✅ Constructor
+    //  Constructor
     public JobResponseDTO(Long id, String company, String role,
                           String status, LocalDate appliedDate, String notes) {
         this.id = id;
@@ -22,7 +22,7 @@ public class JobResponseDTO {
         this.notes = notes;
     }
 
-    // ✅ Getters & Setters
+    //  Getters & Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

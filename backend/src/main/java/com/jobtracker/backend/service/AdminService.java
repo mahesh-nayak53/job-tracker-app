@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-@Transactional   // ✅ apply transaction to whole class
+@Transactional   //  apply transaction to whole class
 public class AdminService {
 
     private final UserRepository userRepository;
@@ -24,9 +24,9 @@ public class AdminService {
         this.jobRepository = jobRepository;
     }
 
-    // ============================
+    
     //  GET ALL USERS (DTO)
-    // ============================
+  
     public List<UserDTO> getAllUsers() {
         return userRepository.findAll()
                 .stream()
@@ -38,9 +38,9 @@ public class AdminService {
                 .toList();
     }
 
-    // ============================
+  
     //  DELETE USER (SAFE)
-    // ============================
+   
     public String deleteUser(Long id) {
 
         User user = userRepository.findById(id)
@@ -54,9 +54,9 @@ public class AdminService {
         return "User deleted successfully";
     }
 
-    // ============================
+   
     // GET ALL JOBS
-    // ============================
+   
     public List<JobResponseDTO> getAllJobs() {
 
         return jobRepository.findAll()
@@ -72,9 +72,9 @@ public class AdminService {
                 .toList();
     }
 
-    // ============================
+   
     // PROMOTE USER TO ADMIN
-    // ============================
+  
     public String makeAdmin(Long id) {
 
         User user = userRepository.findById(id)

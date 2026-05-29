@@ -6,7 +6,7 @@ public class UserDTO {
     private String username;
     private String role;
 
-    // ✅ Constructor (required for your service)
+    //  Constructor (required for your service)
     public UserDTO(Long id, String username, String role) {
         this.id = id;
         this.username = username;

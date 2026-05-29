@@ -24,10 +24,10 @@ public class AuthService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    // ✅ REGISTER
+    // REGISTER
     public String register(AuthDTO dto) {
 
-        // 🔒 prevent duplicate users
+        // prevent duplicate users
         if (repository.findByUsername(dto.getUsername()).isPresent()) {
             throw new RuntimeException("Username already exists");
         }
@@ -44,7 +44,7 @@ public class AuthService {
         return "User registered successfully";
     }
 
-    // ✅ LOGIN
+    // LOGIN
 //    public String login(AuthDTO dto) {
 //
 //        User user = repository.findByUsername(dto.getUsername())
@@ -81,7 +81,7 @@ public class AuthService {
                 "ROLE_" + user.getRole().name()
         );
     }
-    // ✅ GET CURRENT USERNAME (SAFE)
+    // GET CURRENT USERNAME (SAFE)
     public String getCurrentUsername() {
 
         Object principal = SecurityContextHolder.getContext()
@@ -92,7 +92,7 @@ public class AuthService {
             return userDetails.getUsername();
         }
 
-        // 🔒 handle anonymous safely
+        //  handle anonymous safely
         if (principal instanceof String && principal.equals("anonymousUser")) {
             throw new RuntimeException("User not authenticated");
         }
@@ -100,7 +100,7 @@ public class AuthService {
         return principal.toString();
     }
 
-    // ✅ GET CURRENT ROLE (SAFE)
+    //  GET CURRENT ROLE (SAFE)
     public String getCurrentRole() {
 
         if (SecurityContextHolder.getContext().getAuthentication() == null) {

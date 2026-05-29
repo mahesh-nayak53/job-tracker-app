@@ -21,26 +21,26 @@ public class AdminController {
         this.service = service;
     }
 
-    // ✅ GET USERS
+    //  GET USERS
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/users")
     public List<UserDTO> getAllUsers() {
         return service.getAllUsers();
     }
 
-    // ✅ DELETE USER
+    // DELETE USER
     @DeleteMapping("/users/{id}")
     public String deleteUser(@PathVariable Long id) {
         return service.deleteUser(id);
     }
 
-    // ✅ GET ALL JOBS
+    // GET ALL JOBS
     @GetMapping("/jobs")
     public List<JobResponseDTO> getAllJobs() {
         return service.getAllJobs();
     }
 
-    // ✅ PROMOTE USER
+    //  PROMOTE USER
     @PutMapping("/users/{id}/make-admin")
     public String makeAdmin(@PathVariable Long id) {
         return service.makeAdmin(id);

@@ -22,7 +22,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    // ✅ PROFILE FIELDS
+    // PROFILE FIELDS
     private String fullName;
     private String phone;
     private String profileImageUrl;
@@ -140,7 +140,7 @@ public class User {
 	
 	
 
-    // getters & setters
+  
     
     
 }

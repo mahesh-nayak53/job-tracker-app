@@ -26,9 +26,9 @@ public interface JobApplicationRepository extends JpaRepository<JobApplication, 
 
     void deleteAllByUser(User user);
 
-    // ============================
+   
     // SEARCH (CLEAN VERSION)
-    // ============================
+  
 
     @Query("""
         SELECT j FROM JobApplication j
@@ -44,17 +44,17 @@ public interface JobApplicationRepository extends JpaRepository<JobApplication, 
             Pageable pageable
     );
 
-    // ============================
+    
     // STATUS FILTER
-    // ============================
+
 
     Page<JobApplication> findByStatus(String status, Pageable pageable);
 
     Page<JobApplication> findByUserAndStatus(User user, String status, Pageable pageable);
 
-    // ============================
+   
     // DASHBOARD COUNTS
-    // ============================
+   
 
     long countByUser(User user);
 
@@ -62,9 +62,9 @@ public interface JobApplicationRepository extends JpaRepository<JobApplication, 
 
     long countByStatus(String status);
 
-    // ============================
+   
     // DASHBOARD ANALYTICS
-    // ============================
+ 
 
     @Query("""
         SELECT FUNCTION('DATE_FORMAT', j.appliedDate, '%Y-%m'), COUNT(j)

@@ -13,17 +13,17 @@ public class JobApplication {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // ✅ USER WHO APPLIED
+    //  USER WHO APPLIED
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    // ✅ JOB POST
+    //  JOB POST
     @ManyToOne
     @JoinColumn(name = "job_post_id")
     private JobPost jobPost;
 
-    // ✅ EXTRA DETAILS
+    //  EXTRA DETAILS
     private String company;
 
     private String role;
@@ -39,15 +39,15 @@ public class JobApplication {
 
     private LocalDateTime appliedAt;
 
-    // ✅ AUTO DATE
+    // AUTO DATE
     @PrePersist
     public void prePersist() {
         appliedAt = LocalDateTime.now();
     }
 
-    // =========================
+
     // GETTERS & SETTERS
-    // =========================
+  
 
     public Long getId() {
         return id;

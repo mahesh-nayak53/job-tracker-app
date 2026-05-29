@@ -25,7 +25,7 @@ public class JobPost {
 
     private LocalDateTime createdAt;
 
-    // ✅ AUTO TIMESTAMP
+    //  AUTO TIMESTAMP
     @PrePersist
     public void prePersist() {
         createdAt = LocalDateTime.now();
@@ -37,7 +37,7 @@ public class JobPost {
     @Transient
     private String applicationStatus;
 
-    // ✅ GETTERS & SETTERS
+    //  GETTERS & SETTERS
 
     public Long getId() {
         return id;

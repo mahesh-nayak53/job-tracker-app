@@ -20,9 +20,9 @@ public class JobApplicationController {
         this.service = service;
     }
 
-    // ============================
-    // ✅ GET JOBS (Pagination + Search)
-    // ============================
+ 
+    //  GET JOBS (Pagination + Search)
+
     @GetMapping
     public ApiResponse<Page<JobResponseDTO>> getAll(
             @RequestParam(defaultValue = "0") int page,
@@ -43,9 +43,9 @@ public class JobApplicationController {
         );
     }
 
-    // ============================
-    // ✅ CREATE JOB
-    // ============================
+
+    //  CREATE JOB
+   
     @PostMapping
     public ApiResponse<JobResponseDTO> add(@Valid @RequestBody JobApplicationDTO dto) {
 
@@ -58,9 +58,9 @@ public class JobApplicationController {
         );
     }
 
-    // ============================
-    // ✅ UPDATE JOB
-    // ============================
+
+    // UPDATE JOB
+   
     @PutMapping("/{id}")
     public ApiResponse<JobResponseDTO> update(@PathVariable Long id,
                                              @RequestBody JobApplicationDTO dto) {
@@ -74,9 +74,9 @@ public class JobApplicationController {
         );
     }
 
-    // ============================
-    // ✅ DELETE JOB
-    // ============================
+  
+    // DELETE JOB
+  
     @DeleteMapping("/{id}")
     public ApiResponse<String> delete(@PathVariable Long id) {
 
