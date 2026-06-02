@@ -99,47 +99,47 @@ https://job-tracker-app-production-543a.up.railway.app/
 
 ### Login Page
 
-<img width="1328" height="813" alt="image" src="screenshots/login.jpg" />
+<img width="900" height="600" alt="image" src="screenshots/login.jpg" />
 
 ### Register Page
 
-<img width="1328" height="813" alt="image" src="screenshots/register.jpg" />
+<img width="900" height="600" alt="image" src="screenshots/register.jpg" />
 
 ### Dashboard
 
 ## Admin Dashboard
 
-<img width="1328" height="813" alt="image" src="screenshots/admindashboard.jpg" />
+<img width="900" height="600" alt="image" src="screenshots/admindashboard.jpg" />
 
 ## User Dashboard
 
-<img width="1328" height="813" alt="image" src="screenshots/userdashboard.jpg" />
+<img width="900" height="600" alt="image" src="screenshots/userdashboard.jpg" />
 
 ## Admin Dashboard
 
-<img width="1328" height="813" alt="image" src="screenshots/admindashboard.jpg" />
+<img width="900" height="600" alt="image" src="screenshots/admindashboard.jpg" />
 
 ### Job Tracking
 
 ## Job Tracking
 
-<img width="1328" height="813" alt="image" src="screenshots/jobtracking.jpg" />
+<img width="900" height="600" alt="image" src="screenshots/jobtracking.jpg" />
 
 ## Job Applications
 
-<img width="1328" height="813" alt="image" src="screenshots/jobapplications.jpg" />
+<img width="900" height="600" alt="image" src="screenshots/jobapplications.jpg" />
 
 ### AI Resume Analyzer
 
-<img width="1328" height="813" alt="image" src="screenshots/AiResumeanalyzer.jpg" />
+<img width="900" height="600" alt="image" src="screenshots/AiResumeanalyzer.jpg" />
 
 ### AI Interview Preparation
 
-<img width="1328" height="813" alt="image" src="screenshots/AiinterviewPrepration.jpg" />
+<img width="900" height="600" alt="image" src="screenshots/AiinterviewPrepration.jpg" />
 
 ### AI Carrer Assistant
 
-<img width="1328" height="813" alt="image" src="screenshots/admindashboard.jpg" />
+<img width="900" height="600" alt="image" src="screenshots/admindashboard.jpg" />
 
 ## Installation
 
