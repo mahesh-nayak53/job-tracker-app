@@ -73,27 +73,26 @@ AI Career Assistant & Job Tracker is a full-stack web application designed to he
 
 ## Architecture
 
-React.js Frontend
-
-⬇
-
+Client (React + Tailwind CSS)
+        ↓
 Spring Boot REST API
-
-⬇
-
+        ↓
+Spring Security + JWT
+        ↓
+Hibernate / JPA
+        ↓
 MySQL Database
 
-⬇
-
-OpenRouter AI Services
+AI Features
+        ↓
+OpenRouter API
 
 ## Live Demo
 
 Frontend:
 https://job-tracker-app-olive.vercel.app
 
-Backend:
-https://job-tracker-app-production-543a.up.railway.app/
+
 
 ## Screenshots
 
@@ -115,10 +114,6 @@ https://job-tracker-app-production-543a.up.railway.app/
 
 <img width="900" height="600" alt="image" src="screenshots/userdashboard.jpg" />
 
-## Admin Dashboard
-
-<img width="900" height="600" alt="image" src="screenshots/admindashboard.jpg" />
-
 ### Job Tracking
 
 ## Job Tracking
@@ -139,7 +134,7 @@ https://job-tracker-app-production-543a.up.railway.app/
 
 ### AI Carrer Assistant
 
-<img width="900" height="600" alt="image" src="screenshots/admindashboard.jpg" />
+<img width="900" height="600" alt="image" src="screenshots/AiCarrerAssistant.jpg" />
 
 ## Installation
 
@@ -169,7 +164,7 @@ mvn spring-boot:run
 ### Frontend
 
 ```env
-VITE_API_URL=YOUR_BACKEND_URL/api
+VITE_API_URL=
 ```
 
 ### Backend
@@ -185,7 +180,7 @@ JWT_SECRET=
 ```
 
 ## Key Highlights
-
+- Role-Based Access Control (Admin/User)
 - Full-Stack Web Application
 - AI-Powered Resume Analysis
 - AI Interview Preparation
@@ -197,13 +192,12 @@ JWT_SECRET=
 - Real-World Project Architecture
 
 ## Future Enhancements
-
-- Resume Upload (PDF/DOCX)
-- AI Skill Gap Analysis
+- AI Cover Letter Generator
+- Mock Interview Simulator
 - Job Recommendation System
 - Email Notifications
-- Admin Dashboard
 - Analytics Dashboard
+- Mobile Application
 
 ## Author
 
