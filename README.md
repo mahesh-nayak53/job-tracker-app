@@ -1,6 +1,6 @@
 # AI Career Assistant & Job Tracker
 
-AI Career Assistant & Job Tracker is a full-stack web application designed to help job seekers manage their career journey efficiently. The platform combines job application tracking with AI-powered features such as Resume Analysis, Interview Preparation, and Career Guidance.
+AI Career Assistant & Job Tracker is a full-stack web application designed to help job seekers manage their career journey efficiently. The platform combines job application tracking with AI-powered features such as Resume Analysis, Interview Preparation, and Career Guidance also with separate dashboard for admin and the user.
 
 ## Features
 
