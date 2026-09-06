@@ -17,4 +17,4 @@ target/
 .settings/
 
 # Logs
-*.log
+*.log.env
