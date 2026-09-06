@@ -77,7 +77,8 @@ public class SecurityConfig {
         config.setAllowedOrigins(List.of(
         		"http://localhost:5173",
                 "http://localhost:5174",
-                "https://job-tracker-app-olive.vercel.app"
+                "https://job-tracker-app-olive.vercel.app",
+                "https://job-tracker-gk0ja2exp-mahesh-nayak53s-projects.vercel.app"
         ));
 
         config.setAllowedMethods(List.of(
