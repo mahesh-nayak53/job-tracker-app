@@ -75,8 +75,9 @@ public class SecurityConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         config.setAllowedOrigins(List.of(
-                "http://localhost:5173",
-                "https://job-tracker-app-olive.vercel.app/"
+        		"http://localhost:5173",
+                "http://localhost:5174",
+                "https://job-tracker-app-olive.vercel.app"
         ));
 
         config.setAllowedMethods(List.of(
