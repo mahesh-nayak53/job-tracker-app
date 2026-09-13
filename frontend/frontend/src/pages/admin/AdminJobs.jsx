@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const API = "http://localhost:8081/api/job-posts";
+const API = `${import.meta.env.VITE_API_URL}/job-posts`;
 
 export default function AdminJobs() {
   const [jobs, setJobs] = useState([]);
