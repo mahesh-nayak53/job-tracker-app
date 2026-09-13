@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-
-const API = `${import.meta.env.VITE_API_URL}/job-posts`;
+import API from "../api/api";
 
 export default function AdminJobs() {
   const [jobs, setJobs] = useState([]);
@@ -14,18 +12,12 @@ export default function AdminJobs() {
     description: "",
   });
 
-  const token = localStorage.getItem("token");
-
   const [loading, setLoading] = useState(false);
 
   // FETCH JOBS
   const fetchJobs = async () => {
     try {
-      const res = await axios.get(API, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await API.get("/job-posts");
 
       setJobs(res.data);
     } catch (err) {
@@ -45,13 +37,8 @@ export default function AdminJobs() {
     setLoading(true);
 
     try {
-      await axios.post(API, form, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      await API.post("/job-posts", form);
 
-      // RESET FORM
       setForm({
         company: "",
         title: "",
@@ -71,11 +58,7 @@ export default function AdminJobs() {
   // DELETE JOB
   const deleteJob = async (id) => {
     try {
-      await axios.delete(`${API}/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      await API.delete(`/job-posts/${id}`);
 
       fetchJobs();
     } catch (err) {
