@@ -1,7 +1,5 @@
 package com.jobtracker.backend.config;
 
-import com.jobtracker.backend.config.jwt.JwtAuthFilter;
-
 import java.util.List;
 
 import org.springframework.context.annotation.Bean;
@@ -13,10 +11,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import com.jobtracker.backend.config.jwt.JwtAuthFilter;
 
 @Configuration
 @EnableMethodSecurity
@@ -77,7 +76,7 @@ public class SecurityConfig {
         config.setAllowedOrigins(List.of(
         		"http://localhost:5173",
                 "https://job-tracker-app-olive.vercel.app",
-                "https://job-tracker-w6cp4mr17-mahesh-nayak53s-projects.vercel.app"
+                "https://job-tracker-gfwhjtjtx-mahesh-nayak53s-projects.vercel.app"
         ));
 
         config.setAllowedMethods(List.of(
