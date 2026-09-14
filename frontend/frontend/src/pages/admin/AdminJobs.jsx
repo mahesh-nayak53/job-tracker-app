@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import API from "../api/api";
+import API from "../../api/axios";
 
 export default function AdminJobs() {
   const [jobs, setJobs] = useState([]);
