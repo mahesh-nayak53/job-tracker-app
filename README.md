@@ -1,58 +1,210 @@
 # AI Career Assistant & Job Tracker
 
-AI Career Assistant & Job Tracker is a full-stack web application designed to help job seekers manage their complete career journey efficiently.
+AI Career Assistant & Job Tracker is a full-stack web application designed to help job seekers manage their career journey efficiently. The platform combines job application tracking with AI-powered features such as Resume Analysis, Interview Preparation, and Career Guidance also with separate dashboard for admin and the user.
 
-The platform combines job application tracking with AI-powered career tools such as Resume Analysis, Interview Preparation, and Career Guidance. It also provides separate dashboards for Admin and User roles with secure role-based access control.
+## Features
 
----
+### Authentication
 
-## Table of Contents
+- User Registration
+- User Login
+- JWT-Based Authentication
+- Secure Access Control
 
-- [Overview](#overview)
-- [Features](#features)
-- [User Roles](#user-roles)
-- [Tech Stack](#tech-stack)
-- [Architecture](#architecture)
-- [Application Flow](#application-flow)
-- [AI Features](#ai-features)
-- [Authentication and Security](#authentication-and-security)
-- [Admin Features](#admin-features)
-- [User Features](#user-features)
-- [Live Demo](#live-demo)
-- [Screenshots](#screenshots)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Frontend Setup](#frontend-setup)
-- [Backend Setup](#backend-setup)
-- [Database Setup](#database-setup)
-- [Environment Variables](#environment-variables)
-- [API Configuration](#api-configuration)
-- [Local Development](#local-development)
-- [Production Deployment](#production-deployment)
-- [Security Notes](#security-notes)
-- [Key Highlights](#key-highlights)
-- [Future Enhancements](#future-enhancements)
-- [Author](#author)
+### Job Tracking
 
----
+- Add Job Applications
+- Update Job Status
+- Track Applied, Selected, and Rejected Jobs
+- Manage Job Search Progress
+- Delete Job Applications
 
-# Overview
+### AI Resume Analyzer
 
-AI Career Assistant & Job Tracker is designed to provide job seekers with a centralized platform for managing job applications, analyzing resumes, preparing for interviews, and receiving AI-powered career guidance.
+- Resume Content Analysis
+- Skill Gap Identification
+- Resume Improvement Suggestions
+- Career-Focused Feedback
 
-The application follows a modern full-stack architecture:
+### AI Interview Preparation
 
-```text
-React + Vite + Tailwind CSS
-            |
-            v
-     Spring Boot REST API
-            |
-            v
- Spring Security + JWT
-            |
-            v
-      Hibernate / JPA
-            |
-            v
-        MySQL
+- Technical Interview Questions
+- HR Interview Questions
+- Personalized Interview Guidance
+- Interview Practice Support
+
+### AI Career Assistant
+
+- Career Guidance
+- Skill Recommendations
+- Job Search Assistance
+- Professional Growth Suggestions
+
+## Tech Stack
+
+### Frontend
+
+- React.js
+- Tailwind CSS
+- Axios
+- JavaScript
+- HTML5
+
+### Backend
+
+- Spring Boot
+- Spring Security
+- JWT Authentication
+- Hibernate / JPA
+
+### Database
+
+- MySQL
+
+### AI Integration
+
+- OpenRouter API
+
+### Deployment
+
+- Vercel - Frontend
+- Render - Backend
+- Aiven - MySQL Database
+
+## Architecture
+
+Client (React + Tailwind CSS)
+        ↓
+Spring Boot REST API
+        ↓
+Spring Security + JWT
+        ↓
+Hibernate / JPA
+        ↓
+MySQL Database
+
+AI Features
+        ↓
+OpenRouter API
+
+## Live Demo
+
+Frontend:
+https://job-tracker-app-olive.vercel.app
+
+Backend :
+https://job-tracker-backend-9c7j.onrender.com
+
+
+
+## Screenshots
+
+### Login Page
+
+<img width="900" height="600" alt="image" src="screenshots/login.jpg" />
+
+### Register Page
+
+<img width="900" height="600" alt="image" src="screenshots/register.jpg" />
+
+### Dashboard
+
+## Admin Dashboard
+
+<img width="900" height="600" alt="image" src="screenshots/admindashboard.jpg" />
+
+## User Dashboard
+
+<img width="900" height="600" alt="image" src="screenshots/userdashboard.jpg" />
+
+### Job Tracking
+
+## Job Tracking
+
+<img width="900" height="600" alt="image" src="screenshots/jobtracking.jpg" />
+
+## Job Applications
+
+<img width="900" height="600" alt="image" src="screenshots/jobapplications.jpg" />
+
+### AI Resume Analyzer
+
+<img width="900" height="600" alt="image" src="screenshots/AiResumeanalyzer.jpg" />
+
+### AI Interview Preparation
+
+<img width="900" height="600" alt="image" src="screenshots/AiinterviewPrepration.jpg" />
+
+### AI Carrer Assistant
+
+<img width="900" height="600" alt="image" src="screenshots/AiCarrerAssistant.jpg" />
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/mahesh-nayak53/job-tracker-app.git
+```
+
+### Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Backend Setup
+
+```bash
+cd backend
+mvn spring-boot:run
+```
+
+## Environment Variables
+
+### Frontend
+
+```env
+VITE_API_URL=
+```
+
+### Backend
+
+```env
+DB_URL=
+DB_USERNAME=
+DB_PASSWORD=
+OPENROUTER_API_KEY=
+MAIL_USERNAME=
+MAIL_PASSWORD=
+JWT_SECRET=
+```
+
+## Key Highlights
+- Role-Based Access Control (Admin/User)
+- Full-Stack Web Application
+- AI-Powered Resume Analysis
+- AI Interview Preparation
+- AI Career Guidance Assistant
+- JWT Authentication & Authorization
+- RESTful API Architecture
+- Cloud Deployment using Vercel & Railway
+- Responsive User Interface
+- Real-World Project Architecture
+
+## Future Enhancements
+- AI Cover Letter Generator
+- Mock Interview Simulator
+- Job Recommendation System
+- Email Notifications
+- Analytics Dashboard
+- Mobile Application
+
+## Author
+
+Mahesh
+
+GitHub:
+https://github.com/mahesh-nayak53
